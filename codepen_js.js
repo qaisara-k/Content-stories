@@ -416,9 +416,9 @@ function qSwipe(dir){
     document.getElementById('qauthor').textContent=d.a;
     document.getElementById('qsrc').textContent=d.s;
     document.getElementById('qsavebtn').classList.remove('saved');
-    const DOT_ON='https://www.figma.com/api/mcp/asset/71388601-9305-47e7-ba87-aab973de88b6';
-    const DOT_OFF='https://www.figma.com/api/mcp/asset/36e23d76-ccc8-493b-977a-d29822eb767d';
-    [0,1,2].forEach(i=>{const el=document.getElementById('d'+i);if(el)el.src=i===qi%3?DOT_ON:DOT_OFF;});
+    
+    
+    [0,1,2].forEach(i=>{const el=document.getElementById('d'+i);if(el){el.style.background=i===qi%3?'white':'rgba(255,255,255,0.35)';}});
     // enter from opposite side
     qcard.style.transition='none';
     qcard.style.transform=`translateX(${dir<0?380:-380}px) rotate(${dir<0?8:-8}deg)`;
