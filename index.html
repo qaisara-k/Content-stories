@@ -1,0 +1,207 @@
+<div class="phone">
+
+<!-- ═══ VIDEO ═══ -->
+<div class="scr on" id="sv">
+  <div class="bg"><img src="https://www.figma.com/api/mcp/asset/c636fba7-f4a1-40be-8c4b-d191970e2262" alt=""></div>
+  <div class="dim"></div>
+  <div class="sbar">
+    <div class="sb-l"><img src="https://www.figma.com/api/mcp/asset/f68f950a-6bb9-4e0d-9127-f23d7ee7c234" alt=""></div>
+    <div class="sb-n"><img src="https://www.figma.com/api/mcp/asset/339a63dc-2739-40eb-aca2-bb377114422b" alt=""></div>
+    <div class="sb-r"><img src="https://www.figma.com/api/mcp/asset/d6e22829-640a-478e-93c7-1ca10748c4a7" alt=""></div>
+  </div>
+  <div class="bgrad"></div>
+  <div class="xbtn"><div class="xbtn-i">✕</div></div>
+
+  <!-- play/pause -->
+  <div class="vplay" id="vp" onclick="vTog()">
+    <svg id="vpi" viewBox="0 0 32 32"><path d="M7 4l20 12L7 28z"/></svg>
+    <svg id="vpause" viewBox="0 0 32 32" style="display:none"><rect x="6" y="4" width="7" height="24" rx="2"/><rect x="19" y="4" width="7" height="24" rx="2"/></svg>
+  </div>
+
+  <!-- scrub HUD -->
+  <div class="vhud" id="vhud">
+    <div class="vts" id="vts">00:32 <span>/ 01:00</span></div>
+    <div class="vtrack">
+      <div class="vfill" id="vfill"></div>
+      <div class="vknob" id="vknob"></div>
+    </div>
+  </div>
+
+  <div class="bbar">
+    <div class="bcta">
+      <div class="tpill"><div class="timg" id="vtimg">
+        <img src="https://www.figma.com/api/mcp/asset/c636fba7-f4a1-40be-8c4b-d191970e2262" alt="">
+      </div></div>
+      <div style="flex:1;min-width:0">
+        <div class="stitle">Gratitude will cha...</div>
+        <div class="ssub">Ep. 1 · See all ›</div>
+      </div>
+    </div>
+    <div class="bicons">
+      <div class="ibtn" onclick="btnPress(this)">
+        <img src="https://www.figma.com/api/mcp/asset/36fd0a5b-ad2c-426d-b3ae-f96fe346b150" alt="Share">
+      </div>
+      <div class="ibtn" onclick="doHeart('v')" id="vibtn">
+        <img src="https://www.figma.com/api/mcp/asset/fa1089a4-17bc-40d6-b565-44bae9a8f8cb" alt="Heart">
+        <div class="hl" id="vhl"><svg viewBox="0 0 24 24"><path d="M12 21.593c-.387-.198-9-4.926-9-12.093a6 6 0 0 1 9-5.197A6 6 0 0 1 21 9.5c0 7.167-8.613 11.895-9 12.093z"/></svg></div>
+      </div>
+    </div>
+  </div>
+  <div class="home"></div>
+</div>
+
+<!-- ═══ AUDIO ═══ -->
+<div class="scr" id="sa">
+  <div class="bg"><img src="https://www.figma.com/api/mcp/asset/4260f84d-e892-4691-9555-3349a259d052" alt=""></div>
+  <div class="dim"></div>
+  <div class="sbar">
+    <div class="sb-l"><img src="https://www.figma.com/api/mcp/asset/f68f950a-6bb9-4e0d-9127-f23d7ee7c234" alt=""></div>
+    <div class="sb-n"><img src="https://www.figma.com/api/mcp/asset/339a63dc-2739-40eb-aca2-bb377114422b" alt=""></div>
+    <div class="sb-r"><img src="https://www.figma.com/api/mcp/asset/d6e22829-640a-478e-93c7-1ca10748c4a7" alt=""></div>
+  </div>
+  <div class="bgrad"></div>
+  <div class="xbtn"><div class="xbtn-i">✕</div></div>
+
+  <div class="acenter">
+    <div class="atop">
+      <div class="atitle">Change your language, change your life</div>
+      <div class="aquote">"studies have found that procrastinators carry accompanying feelings of...</div>
+    </div>
+    <button class="atbtn" onclick="showSheet()">
+      <img src="https://www.figma.com/api/mcp/asset/dadec0da-3fe3-42c7-a65a-9da0442e3443" alt="">
+      Read Full Transcript
+    </button>
+  </div>
+
+  <div class="acenter" style="top:auto;bottom:182px;transform:none;padding:0 24px 0 24px;">
+    <div class="awaveSection">
+      <div class="awrap" id="awrap" onmousedown="awDn(event)" ontouchstart="awDn(event)">
+        <div class="ats" id="ats">0:00 <span>/ 2:47</span></div>
+        <div class="abars" id="abars"></div>
+      </div>
+      <div class="atimeline">
+        <span id="aelapsed">00:40</span>
+        <span>01:00</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="sheet hide" id="sheet">
+    <div class="sheet-fold"></div>
+    <div class="sheet-body">
+      <p>Procrastination is a learned tendency. That is something to celebrate. It means you are not stuck with it.</p>
+      <p>Procrastination is a maladaptive behavior. It may help you cope in the short term, but procrastinators do not come out ahead.</p>
+      <p>Science writer Eric Jaffe says, "if delay were… rational.. there would be no need to call the behavior procrastination — on the contrary, time-management would fit better. Studies have found that procrastinators carry accompanying feelings of guilt, shame, or anxiety."</p>
+      <p>Psychology Professor Joseph Ferrari advises: "Start by substituting new thoughts for those that prevent you from changing."</p>
+    </div>
+    <div class="sheet-fade"></div>
+    <div class="sheet-close" onclick="hideSheet()">Close</div>
+  </div>
+
+  <div class="bbar">
+    <div class="bcta">
+      <div class="tpill"><div class="timg playing">
+        <img src="https://www.figma.com/api/mcp/asset/4260f84d-e892-4691-9555-3349a259d052" alt="">
+      </div></div>
+      <div style="flex:1;min-width:0">
+        <div class="stitle">Change your La...</div>
+        <div class="ssub">Ep. 3 · See all ›</div>
+      </div>
+    </div>
+    <div class="bicons">
+      <div class="ibtn" onclick="btnPress(this)">
+        <img src="https://www.figma.com/api/mcp/asset/36fd0a5b-ad2c-426d-b3ae-f96fe346b150" alt="Share">
+      </div>
+      <div class="ibtn" onclick="doHeart('a')" id="aibtn">
+        <img src="https://www.figma.com/api/mcp/asset/fa1089a4-17bc-40d6-b565-44bae9a8f8cb" alt="Heart">
+        <div class="hl" id="ahl"><svg viewBox="0 0 24 24"><path d="M12 21.593c-.387-.198-9-4.926-9-12.093a6 6 0 0 1 9-5.197A6 6 0 0 1 21 9.5c0 7.167-8.613 11.895-9 12.093z"/></svg></div>
+      </div>
+    </div>
+  </div>
+  <div class="home"></div>
+</div>
+
+<!-- ═══ QUOTE ═══ -->
+<div class="scr" id="st">
+  <!-- bg: painting image blurred 15.35px -->
+  <div class="bg"><img src="https://www.figma.com/api/mcp/asset/7bbd81c1-9cc9-4592-b9cf-33176c5ee3eb" alt=""></div>
+  <div class="dim" style="background:rgba(0,0,0,0.6);"></div>
+  <!-- bokeh canvas -->
+  <canvas class="water-canvas" id="wcanvas" width="375" height="812"></canvas>
+  <!-- status bar -->
+  <div class="sbar">
+    <div class="sb-l"><img src="https://www.figma.com/api/mcp/asset/1f6bd0de-65a7-4bc3-be5e-5080a66e805d" alt=""></div>
+    <div class="sb-n"><img src="https://www.figma.com/api/mcp/asset/231d0b2b-63a7-416d-8628-cc49c6be8c91" alt=""></div>
+    <div class="sb-r"><img src="https://www.figma.com/api/mcp/asset/25b4adde-ce29-4540-a87e-5ae6b70eafd1" alt=""></div>
+  </div>
+  <div class="bgrad"></div>
+  <!-- close button — top:56px right:0 -->
+  <div class="xbtn"><div class="xbtn-i">
+    <img src="https://www.figma.com/api/mcp/asset/088b35fc-72df-43e3-9447-7f0f8e4fb0f8" alt="✕" style="width:24px;height:24px;">
+  </div></div>
+
+  <!-- Quote content: label + card group + dots, all in one flex column -->
+  <div class="qcontent" id="qcontent">
+    <div class="qcard-group">
+      <!-- insight label — above card, outside it -->
+      <div class="qlabel-row">
+        <div class="qlabel" id="qlbl">Insight 1 of 3</div>
+      </div>
+      <!-- card -->
+      <div class="qcard-outer">
+        <div class="qcard" id="qcard">
+          <div class="qcard-top">
+            <div class="qtext" id="qtxt">" If you are irritated by every rub, how will you ever be polished?"</div>
+            <div class="qattrib">
+              <img src="https://www.figma.com/api/mcp/asset/8778bfb6-d541-4978-a202-86ae57fb59e9" alt="" style="width:70px;height:1px;display:block;">
+              <div class="qauthor" id="qauthor">RUMI</div>
+              <div class="qsource" id="qsrc">The transformation of You</div>
+            </div>
+          </div>
+          <div class="qcard-bottom">
+            <img src="https://www.figma.com/api/mcp/asset/114d1a28-0d0a-41a9-934e-000393a5ff87" alt="" style="width:100%;height:1px;display:block;">
+            <div class="qsave-btn" id="qsavebtn" onclick="saveQuote(event)">
+              <img src="https://www.figma.com/api/mcp/asset/04f90be3-f42f-4b2d-a4c5-bb046d0001a6" alt="" style="width:24px;height:24px;flex-shrink:0;">
+              <span class="qsave-txt">Save Quote</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- dots absolutely positioned outside qcontent so they never move with the card swipe -->
+  <div class="qdots" id="qdots" style="position:absolute;bottom:232px;left:50%;transform:translateX(-50%);z-index:24;">
+    <div class="qdot"><img id="d0" src="https://www.figma.com/api/mcp/asset/71388601-9305-47e7-ba87-aab973de88b6" alt=""></div>
+    <div class="qdot"><img id="d1" src="https://www.figma.com/api/mcp/asset/36e23d76-ccc8-493b-977a-d29822eb767d" alt=""></div>
+    <div class="qdot"><img id="d2" src="https://www.figma.com/api/mcp/asset/36e23d76-ccc8-493b-977a-d29822eb767d" alt=""></div>
+  </div>
+
+  <!-- transparent swipe overlay -->
+  <div class="qwrap" id="qwrap"></div>
+
+  <!-- bottom bar -->
+  <div class="bbar">
+    <div class="bcta">
+      <div class="tpill"><div class="timg playing">
+        <img src="https://www.figma.com/api/mcp/asset/7926629b-a863-41f8-9aba-09b21e4f0904" alt="">
+      </div></div>
+      <div style="flex:1;min-width:0">
+        <div class="stitle">The Transformati...</div>
+        <div class="ssub">Ep. 5 · See all ›</div>
+      </div>
+    </div>
+    <div class="bicons">
+      <div class="ibtn" onclick="btnPress(this)">
+        <img src="https://www.figma.com/api/mcp/asset/140f4013-81a3-45ff-a95e-43d7b726ab4c" alt="Share">
+      </div>
+      <div class="ibtn" onclick="doHeart('t')" id="tibtn">
+        <img src="https://www.figma.com/api/mcp/asset/7c65fedf-7f95-457f-82cf-39e572bb6b68" alt="Heart">
+        <div class="hl" id="thl"><svg viewBox="0 0 24 24"><path d="M12 21.593c-.387-.198-9-4.926-9-12.093a6 6 0 0 1 9-5.197A6 6 0 0 1 21 9.5c0 7.167-8.613 11.895-9 12.093z"/></svg></div>
+      </div>
+    </div>
+  </div>
+  <div class="home"></div>
+</div>
+
+</div><!-- /phone -->
